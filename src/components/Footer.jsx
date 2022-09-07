@@ -30,7 +30,7 @@ const Footer = () => {
           ></path>
         </svg>
       </div>
-      <div className="flex-col md:flex md:flex-row items-center md:justify-around w-full h-fit pb-6 copade-primary-bg text-white mt-40  md:mt-20">
+      <div className="flex-col md:flex md:flex-row items-center md:justify-around w-full h-full pb-6 copade-primary-bg text-white mt-40  md:mt-20">
         <div className="flex flex-col justify-center items-center md:w-1/3">
           <img className="w-20 mt-7 md:mt-0" src={logo} alt="" />
           <ul className="flex justify-between pt-6 w-1/5">

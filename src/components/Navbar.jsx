@@ -1,129 +1,92 @@
-import { useState } from "react";
 import logo from "../assets/copade-logo.png";
-import { TiSocialYoutube, TiSocialTwitter } from "react-icons/ti";
-import { FaFacebook } from "react-icons/fa";
-import { AiFillInstagram } from "react-icons/ai";
-import { CgMenu } from "react-icons/cg";
-import { IoClose } from "react-icons/io5";
+import { HiOutlineHome } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [showMenu, setShowMenu] = useState(false);
-
   return (
-    <div className="flex justify-center w-full copade-primary-bg h-20 text-white uppercase shadow-2xl">
-      <div className="flex md:hidden w-full justify-between items-center">
-        <Link to="/">
-          <img className="w-16 py-4 ml-6" src={logo} alt="logo copade" />
-        </Link>
-        <CgMenu onClick={() => setShowMenu(true)} className="mr-4" size={32} />
-      </div>
-
-      <div className="hidden justify-evenly items-center h-full w-full md:flex">
-        <div className="flex justify-center items-center w-1/3 h-full">
-          <img className="w-14 py-3" src={logo} alt="logo copade" />
-          <p className="w-1/2 pl-2 font-bold text-xs">
-            SECRETARIA DE PLANIFICACION Y ACCION PARA EL DESARROLLO
-          </p>
-        </div>
-
-        <div className="w-1/3 flex justify-center">
-          <ul className="flex w-2/3 justify-evenly items-center h-full font-bold text-center">
-            <li className="transition duration-400 hover:scale-110">
-              <Link to="/">Inicio </Link>
+    <div className="navbar copade-primary-bg text-white">
+      <div className="navbar-start ">
+        <div className="dropdown">
+          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow copade-primary-bg rounded-box w-52"
+          >
+            <li>
+              <Link to={"/"}>Inicio de la Guia</Link>
             </li>
-            <li className="transition duration-400 hover:scale-110">
-              <Link to="/preguntas">Preguntados</Link>
-            </li>
-            <li className=" transition duration-400 hover:scale-110">
-              <Link to="/guia">Guia</Link>
+
+            <li>
+              <a>Volver a COPADE</a>
             </li>
           </ul>
         </div>
-        <div className="flex w-1/3 justify-center h-full items-center">
-          <a
-            href="https://www.youtube.com/user/copadeneuquen"
-            target="_blank"
-            rel="nofollow"
-          >
-            <TiSocialYoutube
-              className="ml-2 transition duration-400 hover:scale-125"
-              size={22}
-            />
-          </a>
-          <a
-            href="https://twitter.com/copadeneuquen"
-            target="_blank"
-            rel="nofollow"
-          >
-            <TiSocialTwitter
-              className="ml-2 transition duration-400 hover:scale-125"
-              size={22}
-            />
-          </a>
-          <a
-            href="https://www.facebook.com/copade.neuquen"
-            target="_blank"
-            rel="nofollow"
-          >
-            <FaFacebook
-              className="ml-2 transition duration-400 hover:scale-125"
-              size={18}
-            />
-          </a>
-          <a
-            href="https://www.instagram.com/copadeneuquen/"
-            target="_blank"
-            rel="nofollow"
-          >
-            <AiFillInstagram
-              className="ml-2 transition duration-400 hover:scale-125"
-              size={20}
-            />
-          </a>
-        </div>
+        <Link to={"/"}>
+          <div className="hidden md:flex justify-center items-center ml-8 w-full h-full">
+            <img className="w-14 py-3" src={logo} alt="logo copade" />
+            <p className="md:block hidden w-full pl-2 font-bold text-xs">
+              SECRETARIA DE PLANIFICACION <br /> Y ACCION PARA EL DESARROLLO
+            </p>
+          </div>
+        </Link>
       </div>
-      <div
-        className={`absolute transition-all duration-900  h-screen w-full copade-primary-bg ${
-          showMenu ? "left-0" : " left-[5000px]"
-        }`}
-      >
-        <IoClose
-          onClick={() => setShowMenu(false)}
-          className="absolute right-3 top-3"
-          size={40}
-        />
-        <ul className="flex flex-col w-full justify-start mt-20 items-center h-full font-bold text-center">
-          <li
-            onClick={() => {
-              setShowMenu(false);
-            }}
-            className="transition duration-400 hover:scale-125"
-          >
-            <Link to="/">Inicio </Link>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal p-0">
+          <li>
+            <Link to={"/"}>Inicio</Link>
           </li>
-          <li
-            onClick={() => {
-              setShowMenu(false);
-            }}
-            className=" transition mt-4 duration-400 hover:scale-125"
-          >
-            <Link to="/preguntas">Preguntados</Link>
+
+          <li tabIndex={0}>
+            <a className="justify-between">
+              Pasos
+              <svg
+                className="fill-current rotate-90"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+              </svg>
+            </a>
+            <ul className="p-2 bg-primary">
+              <li>
+                <Link to={"/primerpaso"}>Controles superiores</Link>
+              </li>
+              <li>
+                <Link to={"/segundopaso"}>Controles Intermedios</Link>
+              </li>
+              <li>
+                <Link to={"/tercerpaso"}>Controles de Mapa</Link>
+              </li>
+            </ul>
           </li>
-          <li
-            onClick={() => {
-              setShowMenu(false);
-            }}
-            className="transition mt-4 duration-400 hover:scale-125"
-          >
-            <Link to="/info">Info</Link>
-          </li>
-          <li className="mt-48">
-            <Link to="/">
-              <img className="flex self-end w-16" src={logo} alt="" />
-            </Link>
-          </li>
+          <li></li>
         </ul>
+      </div>
+      <div className="navbar-end">
+        <img className="w-14 mr-6 md:hidden " src={logo} alt="logo copade" />
+        <a
+          href="https://www.copade.gob.ar/"
+          className="btn btn-ghost hidden md:flex justify-between items-center"
+        >
+          Volver a COPADE <HiOutlineHome fontSize={"1.1rem"} color="white" />{" "}
+        </a>
       </div>
     </div>
   );

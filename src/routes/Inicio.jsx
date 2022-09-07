@@ -1,25 +1,38 @@
 import React from "react";
-import empleabilidad from "../assets/empleabilidad.jpg";
-import credito from "../assets/credito.jpg";
-import ciudades from "../assets/ciudades-sostenibles.jpg";
+import hero from "../assets/hero-copade.jpg";
 import ButtonCopade from "../components/ButtonCopade";
+import Steps from "../components/Steps";
 
 const Inicio = () => {
   return (
-    <div className="flex flex-col justify-center items-center">
-      <h1 className="copade-primary-text text-3xl text-center my-4">
-        Bienvenidos a <span className="font-bold"> COPADE</span>
-      </h1>
-      <div className="flex justify-center text-white h-fit">
-        <p className="w-6/12 text-black">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-          assumenda ratione deserunt aut voluptatum, at minima sequi maiores,
-          libero dolorum, asperiores alias! Reprehenderit, facilis. Natus
-          commodi voluptate ea quam est.
-        </p>
+    <div className="flex flex-col h-full justify-center items-center">
+      <div
+        className="hero min-h-screen"
+        style={{ backgroundImage: `url(${hero})` }}
+      >
+        <div className="hero-overlay bg-sky-800 bg-opacity-95"></div>
+        <div className="hero-content text-center text-neutral-content">
+          <div className="max-w-md text-white">
+            <h1 className="mb-5  text-5xl font-bold">Guia de uso SIG</h1>
+            <p className="mb-5">
+              Bienvenido a la guia de uso del sistema de informacion geografica
+              de la Secretaria del COPADE.
+            </p>
+            <button className="btn copade-primary-bg border-none text-white">
+              Comenzar
+            </button>
+          </div>
+        </div>
       </div>
-      <ButtonCopade nombre="Un boton" />
-      <div className="flex flex-col md:flex-row justify-around items-center">
+      <Steps
+        steps={[
+          "Controles Superiores",
+          "Controles Intermedios",
+          "Controles Inferiores",
+        ]}
+        completado={2}
+      />
+      {/*    <div className="flex flex-col md:flex-row justify-around items-center">
         <img
           className="md:w-1/4 w-11/12 my-4 rounded hover:scale-105 transition duration-600 cursor-pointer"
           src={empleabilidad}
@@ -35,7 +48,7 @@ const Inicio = () => {
           src={ciudades}
           alt=""
         />
-      </div>
+      </div> */}
     </div>
   );
 };
