@@ -42,3 +42,7 @@ button.copade-primary-bg:hover {
 .custom-shape-divider-bottom-1661257728 .shape-fill {
   fill: #0066cc;
 }
+
+span.indicator-item {
+  color: white;
+}

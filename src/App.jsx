@@ -6,19 +6,19 @@ import Inicio from "./routes/Inicio";
 import StepOne from "./routes/StepOne";
 import StepTwo from "./routes/StepTwo";
 import StepThree from "./routes/StepThree";
-import Guia from "./routes/Guia";
+import PageNotFound from "./routes/PageNotFound";
 
 function App() {
   return (
     <Router>
-      <div className="h-full max-h-full w-100 min-w-100">
+      <div className="w-100 min-w-100 h-full max-h-full">
         <Navbar />
         <Routes>
           <Route path="/" element={<Inicio />} />
-          <Route path="/primerpaso" element={<StepOne />} />
-          <Route path="/segundopaso" element={<StepTwo />} />
-          <Route path="/tercerpaso" element={<StepThree />} />
-          <Route path="/guia" element={<Guia />} />
+          <Route path="/1" element={<StepOne />} />
+          <Route path="/2" element={<StepTwo />} />
+          <Route path="/3" element={<StepThree />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
       </div>

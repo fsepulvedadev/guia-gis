@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo-copade.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,5 +15,40 @@
   <body>
     <div id="root"></div>
     <script type="module" src="./src/main.jsx"></script>
+    <!-- Accessibility Code for "prueba-gis.netlify.app" -->
+    <script>
+      window.interdeal = {
+        sitekey: "9b40e6cebe988590ab66e71a6324db13",
+        Position: "Left",
+        Menulang: "ES-MX",
+        domains: {
+          js: "https://cdn.equalweb.com/",
+          acc: "https://access.equalweb.com/",
+        },
+        btnStyle: {
+          vPosition: ["80%", null],
+          scale: ["0.6", "0.6"],
+          color: {
+            main: "#0a51f2",
+            second: "",
+          },
+          icon: {
+            type: 7,
+            shape: "semicircle",
+            outline: false,
+          },
+        },
+      };
+      (function (doc, head, body) {
+        var coreCall = doc.createElement("script");
+        coreCall.src = "https://cdn.equalweb.com/core/4.3.7/accessibility.js";
+        coreCall.defer = true;
+        coreCall.integrity =
+          "sha512-hGa5HZtFkT1M7+tUDtU/cbw6AG0ORz3oblztCoTZ/z2qPyr7dgwH3zoT8qpgj21MgcRsMFLD6NNKePGvVks3Ig==";
+        coreCall.crossOrigin = "anonymous";
+        coreCall.setAttribute("data-cfasync", true);
+        body ? body.appendChild(coreCall) : head.appendChild(coreCall);
+      })(document, document.head, document.body);
+    </script>
   </body>
 </html>

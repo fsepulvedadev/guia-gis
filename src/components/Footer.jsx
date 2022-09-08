@@ -3,11 +3,13 @@ import logo from "../assets/copade-logo.png";
 import { TiSocialYoutube, TiSocialTwitter } from "react-icons/ti";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
+import trata from "../assets/trata.png";
+import malvinas from "../assets/malvinas.png";
 
 const Footer = () => {
   return (
     <>
-      <div class="custom-shape-divider-bottom-1661257728 md:top-20 top-40 ">
+      <div class="custom-shape-divider-bottom-1661257728 top-40 md:top-20 ">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -30,10 +32,10 @@ const Footer = () => {
           ></path>
         </svg>
       </div>
-      <div className="flex-col md:flex md:flex-row items-center md:justify-around w-full h-full pb-6 copade-primary-bg text-white mt-40  md:mt-20">
-        <div className="flex flex-col justify-center items-center md:w-1/3">
-          <img className="w-20 mt-7 md:mt-0" src={logo} alt="" />
-          <ul className="flex justify-between pt-6 w-1/5">
+      <div className="copade-primary-bg mt-40 h-full w-full flex-col items-center pb-6 text-white md:mt-20 md:flex md:flex-row  md:justify-around">
+        <div className="flex flex-col items-center justify-center md:w-1/3">
+          <img className="mt-7 w-20 md:mt-0" src={logo} alt="" />
+          <ul className="flex w-1/5 justify-between pt-6">
             <li>
               <TiSocialYoutube />
             </li>
@@ -48,8 +50,8 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col items-center md:w-1/3 pt-4  ">
-          <h2 className="uppercase font-bold md:mb-8 mb-4">Contacto</h2>
+        <div className="flex flex-col items-center pt-4 md:w-1/3  ">
+          <h2 className="mb-4 font-bold uppercase md:mb-8">Contacto</h2>
           <ul className="text-center">
             <li>www.copade.gob.ar</li>
             <li>Antartida Argentina 1245 (CAM)</li>
@@ -58,9 +60,9 @@ const Footer = () => {
             <li>info@copade.gov.ar</li>
           </ul>
         </div>
-        <div className="flex flex-col items-center md:w-1/3 pt-4">
-          <h2 className="uppercase font-bold">Ubicacion</h2>
-          <div className="flex justify-center w-full h-full">
+        <div className="flex flex-col items-center pt-4 md:w-1/3">
+          <h2 className="font-bold uppercase">Ubicacion</h2>
+          <div className="flex h-full w-full justify-center">
             <iframe
               className="mt-4"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.0870040776786!2d-68.08028018489583!3d-38.94484070737495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33bdd3d55447%3A0xbcac8648cb67f2ef!2sCam%20(Centro%20administrativo%20Ministerial)!5e0!3m2!1ses!2sar!4v1661254036199!5m2!1ses!2sar"
@@ -69,6 +71,20 @@ const Footer = () => {
               loading="lazy"
             ></iframe>
           </div>
+        </div>
+      </div>
+      <div className="copade-primary-bg  hidden flex-col items-center justify-center py-4 md:flex">
+        <div className="flex w-11/12 justify-between">
+          <img
+            className="h-24"
+            src={trata}
+            alt="Linea gratuita trata de personas 145"
+          />
+          <img
+            className="h-24"
+            src={malvinas}
+            alt="Las Islas Malvinas son Argentinas"
+          />
         </div>
       </div>
     </>

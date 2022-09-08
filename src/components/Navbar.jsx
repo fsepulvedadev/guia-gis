@@ -1,14 +1,20 @@
 import logo from "../assets/copade-logo.png";
 import { HiOutlineHome } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [openNav, setOpenNav] = useState(false);
+
   return (
-    <div className="navbar copade-primary-bg text-white">
+    <div className="copade-primary-bg navbar text-white">
       <div className="navbar-start ">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
+              onClick={() => {
+                setOpenNav(!openNav);
+              }}
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
               fill="none"
@@ -24,22 +30,66 @@ const Navbar = () => {
             </svg>
           </label>
           <ul
-            tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow copade-primary-bg rounded-box w-52"
+            className={`copade-primary-bg ${
+              openNav ? "block" : "hidden"
+            } menu rounded-box menu-compact absolute  z-10 mt-3 block w-52 p-2 shadow`}
           >
             <li>
-              <Link to={"/"}>Inicio de la Guia</Link>
+              <Link
+                onClick={() => {
+                  setOpenNav(false);
+                }}
+                to={"/"}
+              >
+                Inicio
+              </Link>
             </li>
-
+            <li tabIndex={0}>
+              <a className="justify-between">
+                Pasos
+                <svg
+                  className="rotate-90 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                </svg>
+              </a>
+              <ul className="bg-primary p-2">
+                <li
+                  onClick={() => {
+                    setOpenNav(false);
+                  }}
+                >
+                  <Link to={"/1"}>1er</Link>
+                </li>
+                <li
+                  onClick={() => {
+                    setOpenNav(false);
+                  }}
+                >
+                  <Link to={"/2"}>2do</Link>
+                </li>
+                <li
+                  onClick={() => {
+                    setOpenNav(false);
+                  }}
+                >
+                  <Link to={"/3"}>3er</Link>
+                </li>
+              </ul>
+            </li>
             <li>
               <a>Volver a COPADE</a>
             </li>
           </ul>
         </div>
         <Link to={"/"}>
-          <div className="hidden md:flex justify-center items-center ml-8 w-full h-full">
+          <div className="ml-8 hidden h-full w-full items-center justify-center md:flex">
             <img className="w-14 py-3" src={logo} alt="logo copade" />
-            <p className="md:block hidden w-full pl-2 font-bold text-xs">
+            <p className="hidden w-full pl-2 text-xs font-bold md:block">
               SECRETARIA DE PLANIFICACION <br /> Y ACCION PARA EL DESARROLLO
             </p>
           </div>
@@ -48,14 +98,21 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
           <li>
-            <Link to={"/"}>Inicio</Link>
+            <Link
+              onClick={() => {
+                setOpenNav(false);
+              }}
+              to={"/"}
+            >
+              Inicio
+            </Link>
           </li>
 
           <li tabIndex={0}>
             <a className="justify-between">
               Pasos
               <svg
-                className="fill-current rotate-90"
+                className="rotate-90 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -64,15 +121,15 @@ const Navbar = () => {
                 <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
               </svg>
             </a>
-            <ul className="p-2 bg-primary">
+            <ul className="z-10 bg-primary p-2">
               <li>
-                <Link to={"/primerpaso"}>Controles superiores</Link>
+                <Link to={"/1"}>Controles</Link>
               </li>
               <li>
-                <Link to={"/segundopaso"}>Controles Intermedios</Link>
+                <Link to={"/2"}>Selectores de Capas</Link>
               </li>
               <li>
-                <Link to={"/tercerpaso"}>Controles de Mapa</Link>
+                <Link to={"/3"}>Controles de Mapa</Link>
               </li>
             </ul>
           </li>
@@ -80,10 +137,12 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <img className="w-14 mr-6 md:hidden " src={logo} alt="logo copade" />
+        <Link to={"/"}>
+          <img className="mr-6 w-14 md:hidden " src={logo} alt="logo copade" />
+        </Link>
         <a
           href="https://www.copade.gob.ar/"
-          className="btn btn-ghost hidden md:flex justify-between items-center"
+          className="btn btn-ghost hidden items-center justify-between md:flex"
         >
           Volver a COPADE <HiOutlineHome fontSize={"1.1rem"} color="white" />{" "}
         </a>
