@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Steps from "../components/Steps";
 import selectorCapas from "../assets/selector-capas.png";
 import { Link } from "react-router-dom";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
+import logo from "../assets/logo-copade.jpg";
 
 const stepTwo = () => {
-  return (
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  return loading ? (
+    <div className="flex h-72 flex-col items-center justify-center">
+      <img className="w-28 animate-bounce" src={logo} alt="Cargando..." />
+      <p className="text-l mt-10 font-bold text-[#0098db]">Cargando...</p>
+    </div>
+  ) : (
     <div className="flex w-full flex-col items-center justify-center">
       <div className="flex w-11/12 flex-col items-center py-6">
         <Steps
@@ -46,7 +60,14 @@ const stepTwo = () => {
                 </li>
                 <li>
                   <h4 className="font-bold text-primary">
-                    3 - Selector de Capas
+                    3 - Selector de segunda Subcategoria
+                  </h4>
+                  En caso de estar disponible se muestran estas categorias
+                  dentro de las subcategorias.
+                </li>
+                <li>
+                  <h4 className="font-bold text-primary">
+                    4 - Selector de Capas
                   </h4>
                   Cada capa posee un icono de check para mostrarse/ocultarse, y
                   un icono de llave para ver informacion detallada.
@@ -58,7 +79,7 @@ const stepTwo = () => {
         <div className="flex  w-full items-center justify-between">
           <Link
             className="btn btn-primary my-10 flex w-28  text-white md:w-36"
-            to={"/primerpaso"}
+            to={"/1"}
           >
             <MdNavigateBefore
               className="hidden md:block"
@@ -74,7 +95,7 @@ const stepTwo = () => {
           </Link>
           <Link
             className="btn btn-primary my-10 w-28 text-white md:w-36"
-            to={"/tercerpaso"}
+            to={"/3"}
           >
             Siguiente <MdNavigateNext color="#fff" size={"1.5rem"} />
           </Link>

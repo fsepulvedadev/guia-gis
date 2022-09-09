@@ -1,5 +1,5 @@
 import logo from "../assets/copade-logo.png";
-import { HiOutlineHome } from "react-icons/hi";
+import { IoReturnDownBack } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -48,7 +48,7 @@ const Navbar = () => {
               <a className="justify-between">
                 Pasos
                 <svg
-                  className="rotate-90 fill-current"
+                  className=" fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
@@ -57,27 +57,31 @@ const Navbar = () => {
                   <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                 </svg>
               </a>
-              <ul className="bg-primary p-2">
+              <ul className="absolute bg-primary">
                 <li
                   onClick={() => {
                     setOpenNav(false);
                   }}
                 >
-                  <Link to={"/1"}>1er</Link>
+                  <Link to={"/1"}>Controles</Link>
                 </li>
                 <li
                   onClick={() => {
                     setOpenNav(false);
                   }}
                 >
-                  <Link to={"/2"}>2do</Link>
+                  <Link to={"/2"}>
+                    Selectores <br /> de capas
+                  </Link>
                 </li>
                 <li
                   onClick={() => {
                     setOpenNav(false);
                   }}
                 >
-                  <Link to={"/3"}>3er</Link>
+                  <Link to={"/3"}>
+                    Controles <br /> de mapa
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -144,7 +148,8 @@ const Navbar = () => {
           href="https://www.copade.gob.ar/"
           className="btn btn-ghost hidden items-center justify-between md:flex"
         >
-          Volver a COPADE <HiOutlineHome fontSize={"1.1rem"} color="white" />{" "}
+          Volver a COPADE{" "}
+          <IoReturnDownBack className="ml-2" color="#fff" size={"1.5rem"} />{" "}
         </a>
       </div>
     </div>

@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Steps from "../components/Steps";
 import controlesSup from "../assets/controles-superiores.png";
 import controlesInt from "../assets/controles-intermedios.png";
+import logo from "../assets/logo-copade.jpg";
 import { Link } from "react-router-dom";
 import { MdNavigateNext } from "react-icons/md";
 
 const stepOne = () => {
-  return (
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+  return loading ? (
+    <div className="flex h-72 flex-col items-center justify-center">
+      <img className="w-28 animate-bounce" src={logo} alt="Cargando..." />
+      <p className="text-l mt-10 font-bold text-[#0098db]">Cargando...</p>
+    </div>
+  ) : (
     <div className="flex w-full flex-col items-center justify-center">
       <div className="flex w-11/12 flex-col items-center py-6">
         <Steps
@@ -110,10 +123,7 @@ const stepOne = () => {
           </div>
         </div>
         <div className="flex w-full justify-end ">
-          <Link
-            className="btn btn-primary my-10 text-white"
-            to={"/segundopaso"}
-          >
+          <Link className="btn btn-primary my-10 text-white" to={"/2"}>
             Siguiente Paso <MdNavigateNext color="#fff" size={"1.5rem"} />
           </Link>
         </div>

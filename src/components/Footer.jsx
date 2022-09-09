@@ -37,16 +37,31 @@ const Footer = () => {
           <img className="mt-7 w-20 md:mt-0" src={logo} alt="" />
           <ul className="flex w-1/5 justify-between pt-6">
             <li>
-              <TiSocialYoutube />
+              <a
+                href="https://www.youtube.com/user/copadeneuquen"
+                target="_blank"
+              >
+                <TiSocialYoutube />
+              </a>
             </li>
             <li>
-              <TiSocialTwitter />
+              <a href="https://twitter.com/copadeneuquen" target="_blank">
+                <TiSocialTwitter />
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.facebook.com/copade.neuquen" target="_blank">
+                <FaFacebook />
+              </a>
             </li>
             <li>
-              <FaFacebook />
-            </li>
-            <li>
-              <AiFillInstagram />
+              <a
+                href="https://www.instagram.com/copadeneuquen/"
+                target="_blank"
+              >
+                <AiFillInstagram />
+              </a>
             </li>
           </ul>
         </div>

@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from "react";
-
+import React from "react";
+import { Link } from "react-router-dom";
 const Steps = ({ steps, completado }) => {
-  const [pasos, setPasos] = useState({});
-
-  useEffect(() => {
-    setPasos({ ...steps });
-  }, [steps]);
-
   return (
     <div>
       <ul className="steps">
         {steps.map((step, index) => {
           return index < completado ? (
-            <li key={index} className="step step-primary mx-2">
-              {step}
+            <li key={index} className="step step-primary mx-2 text-primary">
+              <Link className="" to={`/${index + 1}`}>
+                {step}
+              </Link>
             </li>
           ) : (
-            <li key={index} className="step mx-2">
-              {step}
+            <li key={index} className="step mx-2 text-primary">
+              <Link className="" to={`/${index + 1}`}>
+                {step}
+              </Link>
             </li>
           );
         })}

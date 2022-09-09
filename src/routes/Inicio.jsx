@@ -1,6 +1,5 @@
 import React from "react";
 import hero from "../assets/hero-copade.jpg";
-import ButtonCopade from "../components/ButtonCopade";
 import { Link } from "react-router-dom";
 
 const Inicio = () => {
@@ -19,7 +18,7 @@ const Inicio = () => {
               de la Secretaria del COPADE.
             </p>
             <Link
-              to={"/primerpaso"}
+              to={"/1"}
               className="copade-primary-bg btn border-none text-white"
             >
               Comenzar
